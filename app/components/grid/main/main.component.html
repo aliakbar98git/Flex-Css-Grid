@@ -1,0 +1,124 @@
+<header class="header" [ngClass]="bgColor ? bgColor : 'bg_header'">
+  <h2 class="header_title">Header</h2>
+</header>
+
+<div class="wrapper">
+ 
+  <div></div>
+  <div class="content_side-menu">
+    <ul>
+      <li class="redClass pointer" (click)="getRedClass()">
+        <a class="active"> MenuItem </a>
+      </li>
+      <li class="blueClass pointer" (click)="getBlueClass()">
+        <a> MenuItem </a>
+      </li>
+      <li class="greenyellowClass pointer" (click)="getGreenyellowClass()">
+        <a> MenuItem </a>
+      </li>
+      <li class="bluevioletClass pointer" (click)="getBluevioletClass()">
+        <a> MenuItem </a>
+      </li>
+      <li class="greenClass pointer" (click)="getGreenClass()">
+        <a> MenuItem </a>
+      </li>
+      <li class="aquaClass pointer" (click)="getAquaClass()">
+        <a> MenuItem </a>
+      </li>
+      <li class="beigeClass pointer" (click)="getBeigeClass()">
+        <a> MenuItem </a>
+      </li>
+      <li class="burlywoodClass pointer" (click)="getBurlywoodClass()">
+        <a> MenuItem </a>
+      </li>
+      <li class="cadetblueClass pointer" (click)="getCadetblueClass()">
+        <a> MenuItem </a>
+      </li>
+      <li
+        class="cornflowerblueClass pointer"
+        (click)="getCornflowerblueClass()"
+      >
+        <a> MenuItem </a>
+      </li>
+      <li class="darkslategrayClass pointer" (click)="getDarkslategrayClass()">
+        <a> MenuItem </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content_form form-group">
+    <form (ngSubmit)="onSubmit()" [formGroup]="contentFormGroup" novalidate>
+      <header class="content_title">CSS Grif</header>
+      <input type="text" class="form-control" formControlName="firstName" />
+      <div
+        *ngIf="
+          contentFormGroup.controls['firstName'].invalid &&
+          contentFormGroup.controls['firstName'].touched
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="contentFormGroup.controls['firstName'].errors">
+          Name is required.
+        </div>
+      </div>
+      <input type="text" class="form-control" formControlName="lastName" />
+      <div
+        *ngIf="
+          contentFormGroup.controls['lastName'].invalid &&
+          contentFormGroup.controls['lastName'].touched
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="contentFormGroup.controls['lastName'].errors">
+          lastName is required.
+        </div>
+      </div>
+      <input type="text" class="form-control" formControlName="email" />
+      <div
+        *ngIf="
+          contentFormGroup.controls['email'].invalid &&
+          contentFormGroup.controls['email'].touched
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="contentFormGroup.controls['email'].errors">
+          Email is required.
+        </div>
+      </div>
+      <input type="text" class="form-control" formControlName="password" />
+      <div
+        *ngIf="
+          contentFormGroup.controls['password'].invalid &&
+          contentFormGroup.controls['password'].touched
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="contentFormGroup.controls['password'].errors">
+          Password is required.
+        </div>
+      </div>
+
+      <div class="content_btn">
+        <button
+          [disabled]="!contentFormGroup.valid"
+          (click)="resetForm()"
+          [ngClass]="bgColor"
+        >
+          Reset Button
+        </button>
+        <button
+          [ngClass]="bgColor"
+          class="btn btn-primary"
+          [disabled]="!contentFormGroup.valid"
+          type="submit"
+        >
+          Submit Button
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<footer class="footer" [ngClass]="bgColor ? bgColor : 'bg_footer'">
+  <h3 class="footer_title">Footer</h3>
+</footer>

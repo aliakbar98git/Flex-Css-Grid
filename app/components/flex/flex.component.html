@@ -1,0 +1,125 @@
+<div class="body">
+  <div class="body_header" [ngClass]="bgColor ? bgColor : 'bg_header'">
+    <h1 class="header_title">Header</h1>
+  </div>
+
+  <div class="content_side">
+    <aside class="side_bar">
+      <h1 class="content_side-title">Side Bar</h1>
+    </aside>
+    <div class="content">
+      <div class="content_side-menu">
+        <ul>
+          <li class="redClass" (click)="getRedClass()">
+            <a href="#" class="active"> MenuItem </a>
+          </li>
+          <li class="blueClass" (click)="getBlueClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+          <li class="greenyellowClass" (click)="getGreenyellowClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+          <li class="bluevioletClass" (click)="getBluevioletClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+          <li class="greenClass" (click)="getGreenClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+          <li class="aquaClass" (click)="getAquaClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+          <li class="beigeClass" (click)="getBeigeClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+          <li class="burlywoodClass" (click)="getBurlywoodClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+          <li class="cadetblueClass" (click)="getCadetblueClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+          <li class="cornflowerblueClass" (click)="getCornflowerblueClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+          <li class="darkslategrayClass" (click)="getDarkslategrayClass()">
+            <a href="#"> MenuItem </a>
+          </li>
+        </ul>
+      </div>
+      <form (ngSubmit)="onSubmit()" [formGroup]="contentFormGroup" novalidate>
+        <div class="content_form form-group">
+          <header class="content_title">FLEX</header>
+          <input type="text" class="form-control" formControlName="firstName" />
+          <div
+            *ngIf="
+              contentFormGroup.controls['firstName'].invalid &&
+              contentFormGroup.controls['firstName'].touched
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="contentFormGroup.controls['firstName'].errors">
+              Name is required.
+            </div>
+          </div>
+          <input type="text" class="form-control" formControlName="lastName" />
+          <div
+            *ngIf="
+              contentFormGroup.controls['lastName'].invalid &&
+              contentFormGroup.controls['lastName'].touched
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="contentFormGroup.controls['lastName'].errors">
+              lastName is required.
+            </div>
+          </div>
+          <input type="text" class="form-control" formControlName="email" />
+          <div
+            *ngIf="
+              contentFormGroup.controls['email'].invalid &&
+              contentFormGroup.controls['email'].touched
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="contentFormGroup.controls['email'].errors">
+              Email is required.
+            </div>
+          </div>
+          <input type="text" class="form-control" formControlName="password" />
+          <div
+            *ngIf="
+              contentFormGroup.controls['password'].invalid &&
+              contentFormGroup.controls['password'].touched
+            "
+            class="alert alert-danger"
+          >
+            <div *ngIf="contentFormGroup.controls['password'].errors">
+              Password is required.
+            </div>
+          </div>
+
+          <div class="content_btn">
+            <button
+              [disabled]="!contentFormGroup.valid"
+              (click)="resetForm()"
+              [ngClass]="bgColor"
+            >
+              Reset Button
+            </button>
+            <button
+              [ngClass]="bgColor"
+              class="btn btn-primary"
+              [disabled]="!contentFormGroup.valid"
+              type="submit"
+            >
+              Submit Button
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="body_footer" [ngClass]="bgColor ? bgColor : 'bg_footer'">
+    <h1 class="footer_title">Footer</h1>
+  </div>
+</div>

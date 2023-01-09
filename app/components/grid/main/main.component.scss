@@ -1,0 +1,158 @@
+.header {
+  position: fixed;
+  height: 60px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  margin-top: 0px;
+  z-index: 999;
+
+  .header_title {
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+.bg_header {
+  background-color: yellow;
+}
+
+app-aside {
+  grid-area: side;
+  margin-right: 0.6rem;
+  background-color: #2a92bf;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+  grid-auto-rows: minmax(100px, auto);
+  align-items: center;
+}
+
+.wrapper > div {
+  padding: 1em;
+}
+.wrapper > div:nth-child(even) {
+}
+
+.nested > div {
+  border: #333 1px solid;
+  padding: 1em;
+}
+.content_form form {
+  display: grid;
+  gap: 12px;
+}
+
+.content_side-menu {
+  margin-top: 9rem;
+  display: grid;
+  justify-content: center;
+}
+.content_title {
+  background-color: blue;
+  text-align: center;
+  color: white;
+  padding: 5px;
+}
+ul {
+  li {
+    list-style-type: none;
+    border-radius: 4px;
+    border: 1px solid black;
+    width: 7rem;
+    text-align: center;
+    align-items: center;
+  }
+  li a {
+    color: black;
+  }
+  li:hover {
+    background-color: gray;
+  }
+}
+
+.content_btn {
+  display: flex;
+  gap: 10px;
+  button {
+    width: 50%;
+    padding: 15px;
+  }
+}
+
+.bg_header {
+  background-color: yellow;
+}
+
+.redClass {
+  background-color: red;
+}
+.blueClass {
+  background-color: blue;
+}
+.greenyellowClass {
+  background-color: greenyellow;
+}
+.bluevioletClass {
+  background-color: blueviolet;
+}
+.greenClass {
+  background-color: green;
+}
+.aquaClass {
+  background-color: aqua;
+}
+.beigeClass {
+  background-color: beige;
+}
+.burlywoodClass {
+  background-color: burlywood;
+}
+.cadetblueClass {
+  background-color: cadetblue;
+}
+.cornflowerblueClass {
+  background-color: cornflowerblue;
+}
+.darkslategrayClass {
+  background-color: darkslategray;
+}
+
+.footer {
+  position: fixed;
+  height: 60px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  z-index: 999;
+  .footer_title {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+}
+.bg_footer {
+  background-color: lightgreen;
+}
+
+@media screen and (max-width: 414px) {
+  .side_bar,
+  .content_side-menu {
+    margin-top: 0;
+    display: none;
+  }
+  .content {
+    width: 100%;
+  }
+  .wrapper{
+    grid-template-columns: repeat(1 , 1fr);
+  }
+
+}
